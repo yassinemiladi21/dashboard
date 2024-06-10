@@ -17,14 +17,26 @@ public class MatchDataProcessor implements ItemProcessor<MatchInput, Match> {
   public Match process(final MatchInput matchInput) throws Exception {
 
     Match match = new Match();
+    
     match.setId(Long.parseLong(matchInput.getId()));
     match.setSeason(matchInput.getSeason());
     match.setCity(matchInput.getCity());
     match.setDate(LocalDate.parse(matchInput.getDate()));
     match.setPlayerOfMatch(matchInput.getPlayer_of_match());
     match.setVenue(matchInput.getVenue());
-    match.setTeam1(matchInput.getTeam1());
-    match.setTeam2(matchInput.getTeam2());
+
+    String firstInningsTeam, secondInningsTeam;
+
+    if ("bat".equals(matchInput.getToss_decision())) {
+        firstInningsTeam = matchInput.getToss_winner();
+        secondInningsTeam = firstInningsTeam.equals(matchInput.getTeam1()) ? matchInput.getTeam2() : matchInput.getTeam1();
+    } else {
+        secondInningsTeam = matchInput.getToss_winner();
+        firstInningsTeam = secondInningsTeam.equals(matchInput.getTeam1()) ? matchInput.getTeam2() : matchInput.getTeam1();
+    }
+
+    match.setTeam1(firstInningsTeam);
+    match.setTeam2(secondInningsTeam);
     match.setTossWinner(matchInput.getToss_winner());
     match.setTossDecision(matchInput.getToss_decision());
     match.setMatchWinner(matchInput.getWinner());
