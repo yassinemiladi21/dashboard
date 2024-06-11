@@ -6,7 +6,7 @@ public class Match {
     private long id;
     private String season;
     private String city;
-    private LocalDate date;
+    private String date;
     private String playerOfMatch;
     private String venue;
     private String team1;
@@ -37,10 +37,10 @@ public class Match {
     public void setCity(String city) {
         this.city = city;
     }
-    public LocalDate getDate() {
+    public String getDate() {
         return date;
     }
-    public void setDate(LocalDate date) {
+    public void setDate(String date) {
         this.date = date;
     }
     public String getPlayerOfMatch() {

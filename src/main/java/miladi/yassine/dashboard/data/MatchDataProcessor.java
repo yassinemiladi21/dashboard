@@ -20,7 +20,7 @@ public class MatchDataProcessor implements ItemProcessor<MatchInput, Match> {
     match.setId(Long.parseLong(matchInput.getId()));
     match.setSeason(matchInput.getSeason());
     match.setCity(matchInput.getCity());
-    match.setDate(LocalDate.parse(matchInput.getDate()));
+    match.setDate(matchInput.getDate());
     match.setPlayerOfMatch(matchInput.getPlayer_of_match());
     match.setVenue(matchInput.getVenue());
     match.setTeam1(matchInput.getTeam1());
