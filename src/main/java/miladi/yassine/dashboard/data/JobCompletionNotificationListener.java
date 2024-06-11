@@ -33,7 +33,7 @@ public class JobCompletionNotificationListener implements JobExecutionListener {
 
       jdbcTemplate
           .query("SELECT * FROM match", new DataClassRowMapper<>(Match.class))
-          .forEach(match -> log.info("Found <{{}}> in the database.", match.getPlayerOfMatch()));
+          .forEach(match -> log.info("Found <{{}}> in the database.", match.getDate()));
     }
   }
 }
