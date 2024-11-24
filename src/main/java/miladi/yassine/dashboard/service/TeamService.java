@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 public class TeamService {
 
     @Autowired
-    TeamRepository teamRepository;
+    private TeamRepository teamRepository;
 
     public Team findByName(String teamName) {
         return teamRepository.findByTeamName(teamName);

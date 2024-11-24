@@ -1,9 +1,8 @@
 package miladi.yassine.dashboard.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 public class Team {
@@ -14,11 +13,13 @@ public class Team {
     private String teamName;
     private long totalMatches;
     private long totalWins;
-    
-        
+
+    @Transient
+    private List<Match> matches;
+
     public Team() {
     }
-    
+
     public Team(String teamName, long totalMatches) {
         this.teamName = teamName;
         this.totalMatches = totalMatches;
@@ -31,6 +32,7 @@ public class Team {
     public void setId(long id) {
         this.id = id;
     }
+
     public String getTeamName() {
         return teamName;
     }
@@ -48,6 +50,13 @@ public class Team {
     }
     public void setTotalWins(long totalWins) {
         this.totalWins = totalWins;
+    }
+    public List<Match> getMatches() {
+        return matches;
+    }
+
+    public void setMatches(List<Match> matches) {
+        this.matches = matches;
     }
 
     @Override
