@@ -33,7 +33,7 @@ jobs:
     - name: Build and Push docker image
       uses: mr-smithers-excellent/docker-build-push@v4
       with:
-        image: yassinemiladi/dashboard:latest
+        image: yassinemiladi/dashboard
         registry: docker.io
         username: ${{secrets.DOCKER_USERNAME}}
         password: ${{secrets.DOCKER_PASSWORD}}
