@@ -1,5 +1,6 @@
 package miladi.yassine.dashboard.controller;
 
+import miladi.yassine.dashboard.service.TeamService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,10 +14,10 @@ import miladi.yassine.dashboard.repository.TeamRepository;
 public class TeamController {
 
     @Autowired
-    TeamRepository teamRepository;
+    TeamService teamService;
 
     @GetMapping("/team/{teamName}")
     public Team getTeam (@PathVariable String teamName) {
-        return teamRepository.findByTeamName(teamName);
+        return teamService.findByName(teamName);
     }
 }
