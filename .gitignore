@@ -34,3 +34,4 @@ build/
 
 ### React app ###
 src/frontend/package.json
+src/frontend/package-lock.json
