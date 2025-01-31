@@ -32,9 +32,9 @@ public class BatchConfiguration {
 	public FlatFileItemReader<MatchInput> reader() {
 		return new FlatFileItemReaderBuilder<MatchInput>()
 			.name("matchDataReader")
-			.resource(new ClassPathResource("match-data.csv"))
+			.resource(new ClassPathResource("results.csv"))
 			.delimited()
-			.names("id","season","city","date","match_type","player_of_match","venue","team1","team2","toss_winner","toss_decision","winner","result","result_margin","target_runs","target_overs","super_over","method","umpire1","umpire2")
+			.names("Season","DateTime","HomeTeam","AwayTeam","FTHG","FTAG","FTR","HTHG","HTAG","HTR","Referee","HS","AS","HST","AST","HC","AC","HF","AF","HY","AY","HR","AR")
 			.targetType(MatchInput.class)
 			.build();
 	}

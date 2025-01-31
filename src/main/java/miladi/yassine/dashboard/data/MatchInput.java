@@ -1,147 +1,211 @@
 package miladi.yassine.dashboard.data;
 
 public class MatchInput {
-    private String id;
-    private String season;
-    private String city;
-    private String date;
-    private String match_type;
-    private String player_of_match;
-    private String venue;
-    private String team1;
-    private String team2;
-    private String toss_winner;
-    private String toss_decision;
-    private String winner;
-    private String result;
-    private String result_margin;
-    private String target_runs;
-    private String target_overs;
-    private String super_over;
-    private String method;
-    private String umpire1;
-    private String umpire2;
-    
-    public String getId() {
-        return id;
-    }
-    public void setId(String id) {
-        this.id = id;
-    }
+    private String Season;
+    private String DateTime;
+    private String HomeTeam;
+    private String AwayTeam;
+    private String FTHG;
+    private String FTAG;
+    private String FTR;
+    private String HTHG;
+    private String HTAG;
+    private String HTR;
+    private String Referee;
+    private String HS;
+    private String AS;
+    private String HST;
+    private String AST;
+    private String HC;
+    private String AC;
+    private String HF;
+    private String AF;
+    private String HY;
+    private String AY;
+    private String HR;
+    private String AR;
+
     public String getSeason() {
-        return season;
+        return Season;
     }
+
     public void setSeason(String season) {
-        this.season = season;
-    }
-    public String getCity() {
-        return city;
-    }
-    public void setCity(String city) {
-        this.city = city;
-    }
-    public String getDate() {
-        return date;
-    }
-    public void setDate(String date) {
-        this.date = date;
-    }
-    public String getMatch_type() {
-        return match_type;
-    }
-    public void setMatch_type(String match_type) {
-        this.match_type = match_type;
-    }
-    public String getPlayer_of_match() {
-        return player_of_match;
-    }
-    public void setPlayer_of_match(String player_of_match) {
-        this.player_of_match = player_of_match;
-    }
-    public String getVenue() {
-        return venue;
-    }
-    public void setVenue(String venue) {
-        this.venue = venue;
-    }
-    public String getTeam1() {
-        return team1;
-    }
-    public void setTeam1(String team1) {
-        this.team1 = team1;
-    }
-    public String getTeam2() {
-        return team2;
-    }
-    public void setTeam2(String team2) {
-        this.team2 = team2;
-    }
-    public String getToss_winner() {
-        return toss_winner;
-    }
-    public void setToss_winner(String toss_winner) {
-        this.toss_winner = toss_winner;
-    }
-    public String getToss_decision() {
-        return toss_decision;
-    }
-    public void setToss_decision(String toss_decision) {
-        this.toss_decision = toss_decision;
-    }
-    public String getWinner() {
-        return winner;
-    }
-    public void setWinner(String winner) {
-        this.winner = winner;
-    }
-    public String getResult() {
-        return result;
-    }
-    public void setResult(String result) {
-        this.result = result;
-    }
-    public String getResult_margin() {
-        return result_margin;
-    }
-    public void setResult_margin(String result_margin) {
-        this.result_margin = result_margin;
-    }
-    public String getTarget_runs() {
-        return target_runs;
-    }
-    public void setTarget_runs(String target_runs) {
-        this.target_runs = target_runs;
-    }
-    public String getTarget_overs() {
-        return target_overs;
-    }
-    public void setTarget_overs(String target_overs) {
-        this.target_overs = target_overs;
-    }
-    public String getSuper_over() {
-        return super_over;
-    }
-    public void setSuper_over(String super_over) {
-        this.super_over = super_over;
-    }
-    public String getMethod() {
-        return method;
-    }
-    public void setMethod(String method) {
-        this.method = method;
-    }
-    public String getUmpire1() {
-        return umpire1;
-    }
-    public void setUmpire1(String umpire1) {
-        this.umpire1 = umpire1;
-    }
-    public String getUmpire2() {
-        return umpire2;
-    }
-    public void setUmpire2(String umpire2) {
-        this.umpire2 = umpire2;
+        Season = season;
     }
 
+    public String getDateTime() {
+        return DateTime;
+    }
 
+    public void setDateTime(String dateTime) {
+        DateTime = dateTime;
+    }
+
+    public String getHomeTeam() {
+        return HomeTeam;
+    }
+
+    public void setHomeTeam(String homeTeam) {
+        HomeTeam = homeTeam;
+    }
+
+    public String getAwayTeam() {
+        return AwayTeam;
+    }
+
+    public void setAwayTeam(String awayTeam) {
+        AwayTeam = awayTeam;
+    }
+
+    public String getFTHG() {
+        return FTHG;
+    }
+
+    public void setFTHG(String FTHG) {
+        this.FTHG = FTHG;
+    }
+
+    public String getFTAG() {
+        return FTAG;
+    }
+
+    public void setFTAG(String FTAG) {
+        this.FTAG = FTAG;
+    }
+
+    public String getFTR() {
+        return FTR;
+    }
+
+    public void setFTR(String FTR) {
+        this.FTR = FTR;
+    }
+
+    public String getHTHG() {
+        return HTHG;
+    }
+
+    public void setHTHG(String HTHG) {
+        this.HTHG = HTHG;
+    }
+
+    public String getHTAG() {
+        return HTAG;
+    }
+
+    public void setHTAG(String HTAG) {
+        this.HTAG = HTAG;
+    }
+
+    public String getHTR() {
+        return HTR;
+    }
+
+    public void setHTR(String HTR) {
+        this.HTR = HTR;
+    }
+
+    public String getReferee() {
+        return Referee;
+    }
+
+    public void setReferee(String referee) {
+        Referee = referee;
+    }
+
+    public String getHS() {
+        return HS;
+    }
+
+    public void setHS(String HS) {
+        this.HS = HS;
+    }
+
+    public String getAS() {
+        return AS;
+    }
+
+    public void setAS(String AS) {
+        this.AS = AS;
+    }
+
+    public String getHST() {
+        return HST;
+    }
+
+    public void setHST(String HST) {
+        this.HST = HST;
+    }
+
+    public String getAST() {
+        return AST;
+    }
+
+    public void setAST(String AST) {
+        this.AST = AST;
+    }
+
+    public String getHC() {
+        return HC;
+    }
+
+    public void setHC(String HC) {
+        this.HC = HC;
+    }
+
+    public String getAC() {
+        return AC;
+    }
+
+    public void setAC(String AC) {
+        this.AC = AC;
+    }
+
+    public String getHF() {
+        return HF;
+    }
+
+    public void setHF(String HF) {
+        this.HF = HF;
+    }
+
+    public String getAF() {
+        return AF;
+    }
+
+    public void setAF(String AF) {
+        this.AF = AF;
+    }
+
+    public String getHY() {
+        return HY;
+    }
+
+    public void setHY(String HY) {
+        this.HY = HY;
+    }
+
+    public String getAY() {
+        return AY;
+    }
+
+    public void setAY(String AY) {
+        this.AY = AY;
+    }
+
+    public String getHR() {
+        return HR;
+    }
+
+    public void setHR(String HR) {
+        this.HR = HR;
+    }
+
+    public String getAR() {
+        return AR;
+    }
+
+    public void setAR(String AR) {
+        this.AR = AR;
+    }
 }

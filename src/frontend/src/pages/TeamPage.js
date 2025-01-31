@@ -22,10 +22,15 @@ export const TeamPage = () => {
     if (!team || !team.teamName) {
         return <h1 style={{color: "red"}}>Team not found!</h1>
     }
+
+    const logoPath = `/images/clubs/${team.teamName}.png`;
     
     return (
     <div className="TeamPage">
-        <h1>{team.teamName}</h1>
+        <div style={{display: "flex", alignitems:"right"}}>
+            <div style={{width:"100px"}}><img style={{width:"100%"}} src={logoPath} alt="Logo"/></div>
+            <h1>{team.teamName}</h1>
+        </div>
         <MatchDetailCard teamName={team.teamName} match={team.matches[0]}/>
         <h2>Latest Matches</h2>
         <div style={{display:'flex',gap:'20px'}}>

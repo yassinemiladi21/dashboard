@@ -17,21 +17,39 @@ public class MatchDataProcessor implements ItemProcessor<MatchInput, Match> {
   public Match process(final MatchInput matchInput) throws Exception {
 
     Match match = new Match();
-    match.setId(Long.parseLong(matchInput.getId()));
+
     match.setSeason(matchInput.getSeason());
-    match.setCity(matchInput.getCity());
-    match.setDate(matchInput.getDate());
-    match.setPlayerOfMatch(matchInput.getPlayer_of_match());
-    match.setVenue(matchInput.getVenue());
-    match.setTeam1(matchInput.getTeam1());
-    match.setTeam2(matchInput.getTeam2());
-    match.setTossWinner(matchInput.getToss_winner());
-    match.setTossDecision(matchInput.getToss_decision());
-    match.setMatchWinner(matchInput.getWinner());
-    match.setResult(matchInput.getResult());
-    match.setResultMargin(matchInput.getResult_margin());
-    match.setUmpire1(matchInput.getUmpire1());
-    match.setUmpire2(matchInput.getUmpire2());
+    match.setDate(matchInput.getDateTime().substring(0,10));
+    match.setTime(matchInput.getDateTime().substring(11,16));
+    match.setHomeTeam(matchInput.getHomeTeam());
+    match.setAwayTeam(matchInput.getAwayTeam());
+    match.setHomeGoals(matchInput.getFTHG());
+    match.setAwayGoals(matchInput.getFTAG());
+    match.setResult(matchInput.getFTR());
+
+    int homeGoals = Integer.parseInt(matchInput.getFTHG());
+    int awayGoals = Integer.parseInt(matchInput.getFTAG());
+
+    if (homeGoals > awayGoals) {
+      match.setWinner(match.getHomeTeam());
+    }
+    else if (homeGoals < awayGoals) {
+      match.setWinner(match.getAwayTeam());
+    }
+
+    match.setReferee(matchInput.getReferee());
+    match.setHomeShots(matchInput.getHS());
+    match.setAwayShots(matchInput.getAS());
+    match.setHomeShotsOnTarget(matchInput.getHST());
+    match.setAwayShotsOnTarget(matchInput.getAST());
+    match.setHomeCorners(matchInput.getHC());
+    match.setAwayCorners(matchInput.getAC());
+    match.setHomeFouls(matchInput.getHF());
+    match.setAwayFouls(matchInput.getAF());
+    match.setHomeYellowCards(matchInput.getHY());
+    match.setAwayYellowCards(matchInput.getAY());
+    match.setHomeRedCards(matchInput.getHR());
+    match.setAwayRedCards(matchInput.getAR());
 
     return match;
   }
