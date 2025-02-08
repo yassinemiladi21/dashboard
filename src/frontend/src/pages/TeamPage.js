@@ -31,9 +31,10 @@ export const TeamPage = () => {
             <div style={{width:"100px"}}><img style={{width:"100%"}} src={logoPath} alt="Logo"/></div>
             <h1>{team.teamName}</h1>
         </div>
-        <MatchDetailCard teamName={team.teamName} match={team.matches[0]}/>
-        <h2>Latest Matches</h2>
         <div style={{display:'flex',gap:'20px'}}>
+        <MatchDetailCard teamName={team.teamName} match={team.matches[0]}/></div>
+        <h2>Latest Matches</h2>
+        <div style={{display:'flex',gap:'20px',justifyContent: "center"}}>
         {team.matches.slice(1).map(match => <MatchSmallCard teamName={team.teamName} match={match}/>)}
 
         </div>
