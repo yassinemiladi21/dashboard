@@ -29,4 +29,10 @@ public class MatchService {
         matchRepository.findAll().forEach(matches::add);
         return matches;
     }
+
+    public List<Match> getMatchesByTeamAndSeason(String teamName, int year) {
+        int nextYear = year + 1;
+        String season = Integer.toString(year) + "-" + Integer.toString(nextYear).substring(2);
+        return matchRepository.findByTeamAndSeason(teamName, teamName, season);
+    }
 }
