@@ -18,7 +18,7 @@ export const TeamPage = () => {
                 setTeam(data);
             };
             fetchMatches();
-        }, [teamName]
+        }, [teamName, apiUrl]
     );
 
     if (!team || !team.teamName) {
