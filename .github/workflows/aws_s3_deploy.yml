@@ -24,6 +24,7 @@ jobs:
       - name: App build
         run: |
           echo "REACT_APP_API_URL=${{ secrets.REACT_APP_API_URL }}" >> $GITHUB_ENV
+          echo "API URL in GITHUB_ENV: $REACT_APP_API_URL"
           npm run build
         working-directory: src/frontend
 
