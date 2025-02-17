@@ -40,7 +40,7 @@ jobs:
           aws-region: eu-north-1
 
       - name: Deploy to AWS S3
-        run: aws s3 sync build s3://pl-dashboard-frontend-bucket --delete
+        run: aws s3 sync build s3://www.pldashboard.click --delete
         working-directory: src/frontend
 
         
