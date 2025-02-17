@@ -35,7 +35,6 @@ export const MatchPage = () => {
         <br></br>
         {matches.map(match => {
 
-            const otherTeam = match.homeTeam === teamName ? match.awayTeam : match.homeTeam;
             const homeTeamPath = "/teams/" + match.homeTeam;
             const awayTeamPath = "/teams/" + match.awayTeam;
             const homeLogoPath = `/images/clubs/${match.homeTeam}.png`;
