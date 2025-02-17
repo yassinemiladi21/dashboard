@@ -34,4 +34,6 @@ jobs:
 
       - name: Deploy to AWS S3
         run: aws s3 sync build s3://pl-dashboard-frontend-bucket --delete
+        working-directory: src/frontend
+
         
