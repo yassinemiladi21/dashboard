@@ -20,17 +20,12 @@ jobs:
       - name: Dependency Installation
         run: npm install
         working-directory: src/frontend
-
-      - name: Debug - Check GitHub Secrets
-        run: echo "API URL from Secrets: ${{ secrets.REACT_APP_API_URL }}"
       
       - name: Set API URL in GitHub Env
         run: echo "REACT_APP_API_URL=${{ secrets.REACT_APP_API_URL }}" >> $GITHUB_ENV
 
       - name: App build
-        run: |
-          echo "REACT_APP_API_URL=${{ secrets.REACT_APP_API_URL }}" >> $GITHUB_ENV
-          echo "API URL in GITHUB_ENV: $REACT_APP_API_URL"
+        run: 
           npm run build
         working-directory: src/frontend
 
