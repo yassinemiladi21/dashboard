@@ -10,7 +10,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/chackout@v4
+        uses: actions/checkout@v4
 
       - name: Nodejs Setup
         uses: actions/setup-node@v3
