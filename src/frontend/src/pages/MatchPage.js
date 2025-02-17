@@ -24,7 +24,7 @@ export const MatchPage = () => {
             setError(error);
             setLoading(false);
           });
-      }, [teamName, year]);
+      }, [teamName, year, apiUrl]);
     
       if (loading) return <p>Loading...</p>;
       if (error) return <p>Error: {error.message}</p>;
