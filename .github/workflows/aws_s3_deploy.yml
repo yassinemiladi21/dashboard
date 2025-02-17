@@ -19,11 +19,11 @@ jobs:
 
       - name: Dependency installation
         run: npm install
-        working-directory: src/frontend
+        working-directory: ../src/frontend
         
       - name: App build
         run: npm run build
-        working-directory: src/frontend
+        working-directory: ../src/frontend
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
