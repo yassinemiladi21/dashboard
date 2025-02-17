@@ -22,7 +22,9 @@ jobs:
         working-directory: src/frontend
         
       - name: App build
-        run: npm run build
+        run: |
+          echo "REACT_APP_API_URL=${{ secrets.REACT_APP_API_URL }}" >> $GITHUB_ENV
+          npm run build
         working-directory: src/frontend
 
       - name: Configure AWS credentials
