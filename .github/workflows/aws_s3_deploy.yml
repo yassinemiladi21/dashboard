@@ -21,8 +21,11 @@ jobs:
         run: npm install
         working-directory: src/frontend
       
-      - name: Set API URL in GitHub Env
-        run: echo "REACT_APP_API_URL=${{ secrets.REACT_APP_API_URL }}" >> $GITHUB_ENV
+      - name: Set API URL
+        run: |
+          touch .env
+          echo REACT_APP_API_URL=${{ secrets.REACT_APP_API_URL }} >> .env
+        working-directory: src/frontend
 
       - name: App build
         run: 
