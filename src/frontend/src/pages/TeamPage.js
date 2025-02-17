@@ -5,13 +5,15 @@ import {MatchSmallCard} from '../components/MatchSmallCard';
 
 export const TeamPage = () => {
 
+    const apiUrl = process.env.REACT_APP_API_URL;
+
     const [team, setTeam] = useState({matches: []});
     const { teamName } = useParams();
 
     useEffect(
         () => {
             const fetchMatches = async() => {
-                const response = await fetch(`http://localhost:8080/team/${teamName}`);
+                const response = await fetch(`${apiUrl}/team/${teamName}`);
                 const data = await response.json();
                 setTeam(data);
             };

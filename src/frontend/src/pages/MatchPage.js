@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 
 export const MatchPage = () => {
 
+    const apiUrl = process.env.REACT_APP_API_URL;
+
     const [matches, setMatches] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -12,7 +14,7 @@ export const MatchPage = () => {
 
    
     useEffect(() => {
-        fetch(`http://localhost:8080/matches/${teamName}?year=${year}`)
+        fetch(`${apiUrl}/matches/${teamName}?year=${year}`)
           .then(response => response.json())
           .then(data => {
             setMatches(data);
