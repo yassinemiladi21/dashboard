@@ -31,3 +31,7 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### React app ###
+src/frontend/package.json
+src/frontend/package-lock.json
