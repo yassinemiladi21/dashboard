@@ -23,6 +23,7 @@ jobs:
       
       - name: Set API URL
         run: |
+          echo ${{secrets.REACT_APP_API_URL}}
           touch .env
           echo REACT_APP_API_URL=${{ secrets.REACT_APP_API_URL }} >> .env
         working-directory: src/frontend
