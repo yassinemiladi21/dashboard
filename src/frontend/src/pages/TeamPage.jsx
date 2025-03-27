@@ -1,9 +1,9 @@
 import {React, useEffect, useState} from 'react';
 import { useParams } from 'react-router-dom';
-import {MatchDetailCard} from '../components/MatchDetailCard';
 import {MatchSmallCard} from '../components/MatchSmallCard';
-import {TeamCard} from '../components/TeamCard';
 import './TeamPage.css'
+import { TeamHeader } from '../components/TeamHeader';
+import { StatCard } from '../components/StatCard';
 
 export const TeamPage = () => {
 
@@ -34,14 +34,25 @@ export const TeamPage = () => {
     
     return (
     <div className="TeamPage">
-        <TeamCard teamName={teamName} logoPath={logoPath}/>
-        <div style={{display:'flex',gap:'20px'}}>
-        <MatchDetailCard teamName={team.teamName} match={team.matches[0]}/></div>
-        <h2>Latest Matches</h2>
-        <div style={{display:'flex',gap:'20px',justifyContent: "center"}}>
-        {team.matches.slice(1).map(match => <MatchSmallCard teamName={team.teamName} match={match}/>)}
-
+      <TeamHeader teamName={team.teamName} logoPath={logoPath}/>
+      <div class="latest-matches">
+        <h2 class="section-title">Recent Matches</h2>
+        <div class="matches-container">
+          <div className="matches-grid">
+          {team.matches.map(match => <MatchSmallCard teamName={team.teamName} match={match}/>)}
+          </div>
         </div>
+      </div>
+    
+    <div className="stats-section">
+    <h2 class="section-title">Season Statistics</h2>
+    <div class="stats-grid">
+        <StatCard kpi="League Position" value="4th" tone="positive" />
+        <StatCard kpi="Points" value="16" tone="positive" />
+        <StatCard kpi="Goals Scored" value="18" tone="positive" />
+        <StatCard kpi="Goals Conceded" value="9" tone="negative" />
+    </div>
+    </div>
     </div>
     );
 }

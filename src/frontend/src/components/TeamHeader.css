@@ -1,0 +1,56 @@
+.TeamHeader {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--premier-purple) 0%, #4D0A54 100%);
+    color: var(--premier-white);
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 20px rgba(56, 0, 60, 0.3);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .TeamHeader::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('https://www.premierleague.com/resources/rebrand/v7.0.0/i/elements/backgrounds/primary-bg-pattern.svg');
+    opacity: 0.1;
+    z-index: 0;
+  }
+
+  .team-logo {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+    filter: drop-shadow(0 0 10px rgba(232, 255, 1, 0.3));
+  }
+
+  .team-name {
+    font-size: 2.5rem;
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  }
+
+  .team-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .team-meta-item {
+    background: rgba(255,255,255,0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+  }

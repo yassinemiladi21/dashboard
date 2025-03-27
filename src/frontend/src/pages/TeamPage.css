@@ -1,5 +1,145 @@
 .TeamPage {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
+
+.section-title {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: var(--premier-purple);
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 50px;
+  height: 4px;
+  background: var(--premier-gold);
+  border-radius: 2px;
+}
+
+.matches-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.matches-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Statsitics section */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.StatCard {
+  background: var(--premier-white);
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(56, 0, 60, 0.1);
+  transition: all 0.3s ease;
+}
+
+.StatCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(56, 0, 60, 0.1);
+}
+
+.StatCard h3 {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.stat-value {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--premier-purple);
+  margin: 0.5rem 0;
+}
+
+.stat-diff {
+  display: inline-block;
+  padding: 0.2rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.stat-diff.positive {
+  background: rgba(0, 255, 135, 0.2);
+  color: #008a47;
+}
+
+.stat-diff.negative {
+  background: rgba(255, 0, 0, 0.1);
+  color: #cc0000;
+}
+
+  @media (max-width: 1024px) {
+    .matches-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .team-name {
+      font-size: 2rem;
+    }
+    
+    .players-grid {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+    
+    .matches-grid {
+      display: flex;
+      overflow-x: auto;
+      gap: 1.5rem;
+      padding-bottom: 1.5rem;
+      scrollbar-width: thin;
+      scrollbar-color: var(--premier-gold) rgba(56, 0, 60, 0.1);
+      grid-template-columns: none;
+    }
+    
+    .matches-grid::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .matches-grid::-webkit-scrollbar-track {
+      background: rgba(56, 0, 60, 0.1);
+      border-radius: 3px;
+    }
+
+    .matches-grid::-webkit-scrollbar-thumb {
+      background-color: var(--premier-gold);
+      border-radius: 3px;
+    }
+    
+    .match-card {
+      min-width: 220px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .team-meta {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    .stats-grid {
+      grid-template-columns: 1fr;
+    }
+  }
